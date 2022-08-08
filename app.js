@@ -1,10 +1,10 @@
 "use strict"
-require("./App/utils/DB")
+require("./DB")
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const userModel = require('./App/Model/Model')
-const { validationMiddleware } = require('./App/Middleware/middleware')
+const userModel = require('./Model')
+const { validationMiddleware } = require('./middleware')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
