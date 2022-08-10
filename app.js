@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const userModel = require('./Model')
-const { validationMiddleware,verifyToken } = require('./middleware')
+const { validationMiddleware,verifyToken ,upload } = require('./middleware')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -109,6 +109,15 @@ app.get('/search/:key', async (req, res) => {
 
     } catch (error) {
         console.log({ error });
+    }
+})
+
+// Upload single image
+app.post('/upload',upload,(req,res)=>{
+    try {
+        res.send('file upload')
+    } catch (error) {
+        console.log(error);
     }
 })
 
