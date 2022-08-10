@@ -4,18 +4,33 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const userModel = require('./Model')
-const { validationMiddleware } = require('./middleware')
+const { validationMiddleware,verifyToken } = require('./middleware')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+// Router
+
+app.use(require("./Login/loginController"));
 
 // Api get data
 app.get('/', async (req, res) => {
     try {
         const user = await userModel.find();
+        res.json(user).status(200)
+        console.log(`run success`);
+    } catch (error) {
+        console.log(error);
+    }
+
+})
+
+// Get data usin id
+app.get('/:id', async (req, res) => {
+    try {
+        const user = await userModel.findById(req.params.id);
         res.json(user).status(200)
         console.log(`run success`);
     } catch (error) {
@@ -106,7 +121,9 @@ app.get('/search/:key', async (req, res) => {
 //     return re.test(email);
 // }
 
-
+// app.post("/welcome", verifyToken, async(req, res) => {
+//     res.status(200).send("Welcome 🙌 ");
+//   });
 
 
 app.listen(4000, console.log("server is sunning"))
