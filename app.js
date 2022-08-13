@@ -34,7 +34,6 @@ app.get('/:id', async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-
 })
 
 
@@ -61,8 +60,8 @@ app.post("/", validationMiddleware, async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-
 })
+
 
 // Api put data
 app.put('/:id', async (req, res) => {
