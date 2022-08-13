@@ -63,9 +63,6 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-app.post("/welcome", verifyToken, async(req, res) => {
-    res.status(200).send("Welcome 🙌 ");
-  });
 
 
 

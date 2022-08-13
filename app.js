@@ -121,8 +121,17 @@ app.post('/upload', upload, (req, res) => {
     }
 })
 
-
+// Middlewre call
+app.post("/welcome", verifyToken, async (req, res) => {
+    res.status(200).send("Welcome 🙌 ");
+});
 
 
 // Port
-app.listen(4000, console.log("server is sunning"))
+app.listen(4000, (err) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("server is running...");
+    }
+})
