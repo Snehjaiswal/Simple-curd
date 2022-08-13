@@ -24,7 +24,6 @@ app.get('/', async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-
 })
 
 // Get data usin id
