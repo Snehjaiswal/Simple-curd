@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const userModel = require('./Model')
-const { validationMiddleware,verifyToken ,upload } = require('./middleware')
+const { validationMiddleware, verifyToken, upload } = require('./middleware')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -43,7 +43,7 @@ app.get('/:id', async (req, res) => {
 // Api post data
 app.post("/", validationMiddleware, async (req, res) => {
     try {
-        const { FirstName, LastName, Email, phoneNo ,birth_year} = req.body;
+        const { FirstName, LastName, Email, phoneNo, birth_year } = req.body;
 
         // EMAIL VALIDATER
         //   if (!validateEmail(Email))
@@ -113,7 +113,7 @@ app.get('/search/:key', async (req, res) => {
 })
 
 // Upload single image
-app.post('/upload',upload,(req,res)=>{
+app.post('/upload', upload, (req, res) => {
     try {
         res.send('file upload')
     } catch (error) {
@@ -134,5 +134,5 @@ app.post('/upload',upload,(req,res)=>{
 //     res.status(200).send("Welcome 🙌 ");
 //   });
 
-
+// Port
 app.listen(4000, console.log("server is sunning"))
