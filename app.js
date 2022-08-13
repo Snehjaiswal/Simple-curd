@@ -12,7 +12,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // Router
-
 app.use(require("./Login/loginController"));
 
 // Api get data
