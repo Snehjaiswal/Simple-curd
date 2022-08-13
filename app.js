@@ -87,6 +87,7 @@ app.delete('/:id', async (req, res) => {
     }
 })
 
+
 // Api search data
 app.get('/search/:key', async (req, res) => {
     console.log('RUN');
@@ -108,6 +109,7 @@ app.get('/search/:key', async (req, res) => {
         console.log({ error });
     }
 })
+
 
 // Upload single image
 app.post('/upload', upload, (req, res) => {
