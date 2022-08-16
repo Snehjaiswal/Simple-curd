@@ -36,7 +36,6 @@ app.get('/:id', async (req, res) => {
     }
 })
 
-
 // Api post data
 app.post("/", validationMiddleware, async (req, res) => {
     try {
