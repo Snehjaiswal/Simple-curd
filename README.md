@@ -18,5 +18,6 @@
 <li>Use Bcrypt </li>
 <li>Use JWT</li>
 <li>Use Middleware</li>
+<li>Use Multer</li>
 <li>Coming soon...</li>
 </ul>
