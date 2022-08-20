@@ -11,14 +11,14 @@
 <li>Delete Api </li>
 <li>Search Api</li>
 <li>File upload</li>
-<li>Joi Validtion</li>
+<li>Use Multer</li>
 <li>Login Create</li>
 <li>Signin & Signup</li>
 <li>Use bodyparser</li>
 <li>Use Bcrypt </li>
 <li>Use JWT</li>
 <li>Use Middleware</li>
-<li>Use Multer</li>
+<li>Joi Validtion</li>
 <li>Coming soon...</li>
 </ul>
 
